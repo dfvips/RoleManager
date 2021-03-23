@@ -1,0 +1,129 @@
+@CHARSET "UTF-8";
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+	padding: 0;
+	margin: 0;
+	border: none;
+	background: rgba(8,138,250,0.8);
+}
+#form{
+	width:86%;
+	max-width: 400px;
+	min-width: 300px;
+	margin: 0 auto;
+	background-color: rgba(248,248,248,0.9);
+	border-radius:10px;
+	height: 260px;
+	transform: translateY(80%);
+}
+#login_h2{
+	color: #449edd;
+	margin-left:5%;
+	float: left;
+	margin-bottom: 30px;
+}
+#login_tip{
+	clear: both;
+	color: #808080;
+	font-size: 0.5em;
+	margin-left: 15px;
+}
+#name,#password{
+	clear:both;
+	width:90%;
+	margin:0 auto;
+	margin-top:20px;
+}
+[type="submit"]{
+	width:90%;
+	margin-left:5%;
+	background-color: #449edd;
+	border-radius: 4px;
+	height: 42px;
+	font-size: 1.5em;
+	color:#fff;
+}
+[type="submit"]:hover{
+	background-color: #449edd;
+	color:#fff;
+	opacity: 0.9;
+}
+#top{
+	height: 80px;
+	width:100%;
+	background: #FFF;
+	top:0;
+	left:0;
+	position: absolute;
+	text-align: center;
+}
+#top>h2{
+	color:#808080;
+	line-height: 50px;
+	text-align: left;
+	margin-left: 5%;
+	font-family:"华文新魏";
+}
+#footer{
+	height: 80px;
+	width:100%;
+	background: #FFF;
+	bottom:0;
+	left:0;
+	position: absolute;
+	text-align: center;
+}
+#footer>p{
+	text-align: center;
+	line-height: 15px;
+	color:gray;
+}
+#footer>p:NTH-CHILD(1) {
+	margin-top:15px;
+}
+@media screen and (min-width:800px){
+	#top>h2{
+		font-size: 3em;
+	}
+	#footer>p:NTH-CHILD(1) {
+		margin-top:18px;
+	}
+	#form{
+		margin-left: 60%;
+	}
+	html,body{
+		background-image: url("../image/bg.jpg");
+		background-size: cover;
+	}
+}
+@media screen and (max-width:750px) and (min-height:500px){
+	#footer{
+		background: none;
+	}	
+	#footer>p{
+		color: #FFF;
+	}
+	#top{
+		background: none;
+	}
+	#top>h2{
+		color: #FFF;
+		text-align: center;
+		margin-left: 0;
+		font-family:Helvetica;
+		padding-top: 20%;
+	}
+	#form{
+		border-radius: 10px;
+		background: rgba(248,248,248,0.7);
+	}
+}
+@media screen and (max-height:600px){
+	#form{
+		transform: translateY(50%);
+	}
+}

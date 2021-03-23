@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.mybatis.UserMapper">
+  <select id="getCount" resultType="int">
+    Select count(*) From (Select user.u_id, user.name, user.gender, user.password, user.phone, user.email,user.address,user_role.r_id from user,user_role where user.u_id=user_role.u_id and user_role.r_id=3) as total
+  </select>
+  <select id="getAllCount" resultType="int">
+    Select count(*) From user
+  </select>
+  <select id="getList" resultType="entity.usermsg">
+    Select user.u_id, user.name, user.gender, user.password, user.phone, user.email, user.address,user_role.r_id from user,user_role Where user_role.u_id=user.u_id
+  </select>
+  <select id="getUser" resultType="entity.usermsg">
+    Select * From user where name like #{name}
+  </select>
+   <select id="getPage" resultType="entity.usermsg">
+    Select user.u_id, user.name, user.gender, user.password, user.phone, user.email,user.address,user_role.r_id from user,user_role where user.u_id=user_role.u_id and user_role.r_id=3 limit #{count},3
+  </select>
+  <select id="getAllPage" resultType="entity.usermsg">
+   Select user.u_id, user.name, user.gender, user.password, user.phone, user.email,user.address,role.r_name,authority.authority,user_role.r_id from user,user_role,role,authority,role_authority Where  user.u_id=user_role.u_id and user_role.r_id=role.r_id and role_authority.a_id=authority.a_id and role_authority.r_id=role.r_id  limit #{count},3
+  </select>
+  <update id="update" >
+   	Update user set name = #{n_name} where id = #{o_id}
+  </update>
+  <delete id="delete">
+  	delete from user where u_id = #{0}
+  </delete>
+    <delete id="deleterole">
+  	delete from user_role where u_id = #{0}
+  </delete>
+  <insert id="insertfirst">
+  	insert into user (u_id, name, gender, password, phone, email, address) values (#{0},#{1},#{2},#{3},#{4},#{5},#{6})
+  </insert>
+  <insert id="insertsecond">
+    insert into user_role (u_id,r_id) values ((Select u_id from user where name=#{0} and phone=#{1}),#{2})
+  </insert>
+  <select id="tripleSearch" resultType="entity.usermsg">
+	Select user.u_id, user.name, user.gender, user.password, user.phone, user.email,user.address,role.r_name,authority.authority,user_role.r_id from user,user_role,role,authority,role_authority Where user.u_id=#{0} and user_role.r_id=(Select user_role.r_id from user_role Where user_role.u_id=#{0})  and role_authority.r_id=(Select user_role.r_id from user_role Where user_role.u_id=#{0}) and role_authority.a_id=(Select a_id from role_authority where role_authority.r_id=(Select user_role.r_id from user_role Where user_role.u_id=#{0})) and user.u_id=user_role.u_id and user_role.r_id=role.r_id and role_authority.a_id=authority.a_id   
+  </select>
+  <select id="login" resultType="entity.usermsg">
+    Select * from user where (name=#{0} or email=#{0} or phone=#{0} ) and password=#{1};
+  </select>
+  <update id="updatemsg">
+    Update user set password = #{1},phone = #{2},email = #{3},address = #{4} where u_id = #{0}
+  </update>
+  <update id="updateallmsg">
+      Update user set name = #{1},gender = #{2},password = #{3},phone = #{4},email=#{5},address = #{6} where u_id = #{0}
+  </update>
+</mapper>

@@ -1,0 +1,150 @@
+@CHARSET "UTF-8";
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+#top{
+	height: 80px;
+	width:100%;
+	top:0;
+	left:0;
+	background:#f6f6f6;
+	position: absolute;
+	text-align: center;
+}
+#top>span{
+	display:inline-block;
+}
+#top>span:nth-child(1){
+	line-height: 80px;
+	width:30%;
+	text-align: left;
+	margin-left:5%;
+	color: #000;
+}
+#top>span:nth-child(2){
+	line-height: 80px;
+	width:50%;
+	text-align: right;
+	color: #2196f3;
+	font-weight: bold;
+}
+#top>span:nth-child(2):hover{
+	cursor: pointer;
+	
+}
+.container{
+	margin-top: 85px;
+	background: rgba(248,248,248,0.7);
+	border: 3px solid  rgb(248,248,248);
+	border-radius: 10px;
+	max-width: 768px;
+	min-width: 300px;
+	width: 80%;
+	margin-top: 30%;
+}
+
+tr>td:nth-child(1){
+	color:#2196f3;
+	text-align:center;
+}
+td,th{
+	width: 20%;
+	text-align: center;
+	line-height: 50px;
+}
+td:nth-child(1),td:nth-child(2){
+	width: 10%;
+}
+tr{
+	height: 30px;
+}
+table {
+	border: 2px solid #e0e0e0;
+	box-shadow: activeborder;
+}
+.btn,.btn:hover{
+	width: 60%;
+	background: #449edd;
+	color: #FFF;
+	font-weight: bold;
+}
+.btn:hover{
+	opacity: 0.8;
+}
+#footer{
+	height: 80px;
+	width:100%;
+	background:#f6f6f6;
+	bottom:0;
+	left:0;
+	position: absolute;
+	text-align: center;
+}
+#footer>p{
+	text-align: center;
+	line-height: 15px;
+	color:gray;
+}
+#footer>p:NTH-CHILD(1) {
+	margin-top:15px;
+}
+#userName{
+	color: #449edd;
+}
+#add{
+	margin:0 auto;
+	width:50%;
+}
+.container>h2{
+	margin-left:5%;
+}
+a:hover,span:hover {
+	cursor: pointer;
+	text-decoration: none;
+}
+#panel_add{
+	display: none;
+}
+#btn_add,#cancle{
+	width: 25%;
+}
+#panel_add>table>tbody>tr>td:nth-child(1){
+	width: 37%;
+	text-align: right;
+	padding-right: 8%;
+}
+#panel_add>table>tbody>tr>td:nth-child(2){
+	width: 53%;
+	padding-left:2%;
+	text-align: left;
+}
+#td_bottom{
+	text-align: center;
+}
+#cancle{
+	margin-left:5%;
+	background: #FFF;
+	color:#449edd;
+	border:1px solid #449edd;
+}
+input[type="number"]{
+	-moz-appearance:textfield; 
+}
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{
+	-webkit-appearance: none !important;           
+ }
+@media screen and (min-width:800px){
+	.container{
+		margin-top: 10%;
+	}
+	#footer{
+		background:#e1e1e1;
+	}
+}

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>RoleManager</display-name>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.cn.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserMsgUpdate</servlet-name>
+    <servlet-class>com.cn.servlet.UserMsgUpdate</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>com.cn.servlet.Logout</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AllUsermsg</servlet-name>
+    <servlet-class>com.cn.servlet.AllUsermsg</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddUser</servlet-name>
+    <servlet-class>com.cn.servlet.AddUser</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminAll</servlet-name>
+    <servlet-class>com.cn.servlet.AdminAll</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminUpdate</servlet-name>
+    <servlet-class>com.cn.servlet.AdminUpdate</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminDelete</servlet-name>
+    <servlet-class>com.cn.servlet.AdminDelete</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Delete</servlet-name>
+    <servlet-class>com.cn.servlet.Delete</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserMsgUpdate</servlet-name>
+    <url-pattern>/UserMsgUpdate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AllUsermsg</servlet-name>
+    <url-pattern>/AllUsermsg</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddUser</servlet-name>
+    <url-pattern>/AddUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminAll</servlet-name>
+    <url-pattern>/AdminAll</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminUpdate</servlet-name>
+    <url-pattern>/AdminUpdate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminDelete</servlet-name>
+    <url-pattern>/AdminDelete</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Delete</servlet-name>
+    <url-pattern>/Delete</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
